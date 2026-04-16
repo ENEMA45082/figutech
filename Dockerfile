@@ -6,6 +6,7 @@ RUN mvn -q -DskipTests package
 
 FROM eclipse-temurin:21-jre
 WORKDIR /app
+RUN mkdir -p /app/data
 COPY --from=build /app/target/figumatch-backend-0.1.0.jar ./app.jar
 ENV JAVA_OPTS=""
 EXPOSE 8080
