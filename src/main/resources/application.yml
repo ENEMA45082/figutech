@@ -1,0 +1,21 @@
+server:
+  port: 3001
+
+spring:
+  datasource:
+    url: jdbc:sqlite:./data/figumatch.db
+    driver-class-name: org.sqlite.JDBC
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.community.dialect.SQLiteDialect
+        format_sql: true
+    open-in-view: false
+  jackson:
+
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.hibernate.orm.jdbc.bind: TRACE
